@@ -9,10 +9,10 @@ import {
   AdjustmentsIcon,
 } from "react-native-heroicons/outline";
 
-import Categories from "../components/Categories";
-import FeaturedRow from "../components/FeaturedRow";
+import { Categories } from "../components/Categories";
+import { FeaturedRow } from "../components/FeaturedRow";
 
-const HomeScreen = () => {
+export function HomeScreen() {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -27,7 +27,7 @@ const HomeScreen = () => {
       <View className="flex-row items-center pb-3 mx-4 space-x-2 ">
         <Image
           source={{ uri: "https://github.com/rbpolim.png" }}
-          className="p-4 bg-gray-700 rounded-full h-10 w-10"
+          className="w-10 h-10 p-4 bg-gray-700 rounded-full"
         />
 
         <View className="flex-1">
@@ -62,6 +62,7 @@ const HomeScreen = () => {
       >
         {/* CATEGORIES */}
         <Categories />
+
         {/* FEATURED ROWS */}
         <FeaturedRow
           id="1"
@@ -81,6 +82,4 @@ const HomeScreen = () => {
       </ScrollView>
     </SafeAreaView>
   );
-};
-
-export default HomeScreen;
+}

@@ -1,13 +1,12 @@
 import { View, Text, ScrollView } from "react-native";
-import React from "react";
 import { ArrowRightIcon } from "react-native-heroicons/outline";
 import { useQuery } from "@apollo/client";
 
-import RestaurantCard from "./RestaurantCard";
-
 import { GET_RESTAURANTS } from "../graphql/queries/get.restaurants.query";
 
-const FeaturedRow = ({ id, title, description }) => {
+import { RestaurantCard } from "./RestaurantCard";
+
+export function FeaturedRow({ title, description }) {
   const { data, loading, error } = useQuery(GET_RESTAURANTS);
 
   if (loading) return <Text>Loading...</Text>;
@@ -48,6 +47,4 @@ const FeaturedRow = ({ id, title, description }) => {
       </ScrollView>
     </View>
   );
-};
-
-export default FeaturedRow;
+}

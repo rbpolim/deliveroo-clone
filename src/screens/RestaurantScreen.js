@@ -1,9 +1,9 @@
 import React, { useLayoutEffect } from "react";
+import { ScrollView, Image, TouchableOpacity } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { ArrowLeftIcon } from "react-native-heroicons/outline";
 
-const RestaurantScreen = () => {
+export function RestaurantScreen() {
   const { params } = useRoute();
   const navigation = useNavigation();
 
@@ -42,6 +42,4 @@ const RestaurantScreen = () => {
       {/* <Text>{title}</Text> */}
     </ScrollView>
   );
-};
-
-export default RestaurantScreen;
+}

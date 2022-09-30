@@ -1,13 +1,14 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
 import { ScrollView, Text } from "react-native";
 
 import { GET_CATEGORIES } from "../graphql/queries/get.categories.query";
 
-import CategoryCard from "./CategoryCard";
+import { CategoryCard } from "./CategoryCard";
 
-const Categories = () => {
+export function Categories() {
   const { data, loading, error } = useQuery(GET_CATEGORIES);
+
+  console.log(data);
 
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>`Error! ${error.message}`</Text>;
@@ -27,6 +28,4 @@ const Categories = () => {
       ))}
     </ScrollView>
   );
-};
-
-export default Categories;
+}
