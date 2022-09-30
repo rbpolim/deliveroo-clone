@@ -4,6 +4,7 @@ import { TailwindProvider } from "tailwindcss-react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { API_URL } from '@env'
 
 import HomeScreen from "./screens/HomeScreen";
 import RestaurantScreen from "./screens/RestaurantScreen";
@@ -11,7 +12,7 @@ import RestaurantScreen from "./screens/RestaurantScreen";
 const Stack = createNativeStackNavigator();
 
 const client = new ApolloClient({
-  uri: "https://api-sa-east-1.hygraph.com/v2/cl6hydf8v4l6001uk27lwg9lv/master",
+  uri: API_URL,
   cache: new InMemoryCache(),
 });
 
