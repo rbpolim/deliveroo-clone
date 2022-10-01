@@ -8,8 +8,6 @@ import { CategoryCard } from "./CategoryCard";
 export function Categories() {
   const { data, loading, error } = useQuery(GET_CATEGORIES);
 
-  console.log(data);
-
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>`Error! ${error.message}`</Text>;
 
