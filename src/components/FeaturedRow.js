@@ -1,6 +1,6 @@
 import { View, Text, ScrollView } from "react-native";
-import { ArrowRightIcon } from "react-native-heroicons/outline";
 import { useQuery } from "@apollo/client";
+import { ArrowRightIcon } from "react-native-heroicons/outline";
 
 import { GET_RESTAURANTS } from "../graphql/queries/get.restaurants.query";
 
@@ -23,27 +23,24 @@ export function FeaturedRow({ title, description }) {
 
       <ScrollView
         horizontal
+        className="pt-4"
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: 15, paddingTop: 10 }}
-        className="pt-4"
       >
-        {/* RESTAURANT CARDS */}
-        {data?.restaurants.map((restaurant) => {
-          return (
-            <RestaurantCard
-              key={restaurant.id}
-              image={restaurant.image.url}
-              title={restaurant.name}
-              rating={restaurant.rating}
-              genre={restaurant.genres}
-              address={restaurant.address}
-              description={restaurant.description}
-              // dishes={[]}
-              lon={restaurant.coordinates.longitude}
-              lat={restaurant.coordinates.latitude}
-            />
-          );
-        })}
+        {data?.restaurants.map((restaurant) => (
+          <RestaurantCard
+            key={restaurant.id}
+            image={restaurant.image.url}
+            title={restaurant.name}
+            rating={restaurant.rating}
+            genre={restaurant.genres}
+            address={restaurant.address}
+            description={restaurant.description}
+            dishes={restaurant.dishes}
+            lon={restaurant.coordinates.longitude}
+            lat={restaurant.coordinates.latitude}
+          />
+        ))}
       </ScrollView>
     </View>
   );
