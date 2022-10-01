@@ -16,6 +16,15 @@ export const GET_RESTAURANTS = gql`
       }
       rating
       genres
+      dishes {
+        name
+        id
+        description
+        price
+        image {
+          url
+        }
+      }
     }
   }
 `;
