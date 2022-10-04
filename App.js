@@ -1,6 +1,9 @@
 import { AppRegistry } from "react-native";
 import { TailwindProvider } from "tailwindcss-react-native";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { Provider } from "react-redux";
+
+import { store } from "./src/app/store";
 
 import { Routes } from "./src/routes";
 
@@ -14,9 +17,11 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <TailwindProvider>
-      <ApolloProvider client={client}>
-        <Routes />
-      </ApolloProvider>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
+          <Routes />
+        </ApolloProvider>
+      </Provider>
     </TailwindProvider>
   );
 }
