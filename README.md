@@ -1,4 +1,4 @@
-![print-aeras-web (1)](https://user-images.githubusercontent.com/66570560/193815838-fc9edb16-25a7-4125-ac7e-eeeb8a3c6f32.jpg)
+![print-aeras-web](https://user-images.githubusercontent.com/66570560/194611762-30b6d96c-a249-4145-9bd6-ef839737a00e.jpg)
 
 # Project
 
